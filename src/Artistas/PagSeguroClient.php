@@ -224,6 +224,22 @@ class PagSeguroClient extends PagSeguroConfig
     }
 
     /**
+     * Retorna a transação da notificação pela referência.
+     *
+     * @param string $referenceCode
+     *
+     * @return \SimpleXMLElement
+     */
+    public function notificationByReference($referenceCode)
+    {
+        return $this->sendTransaction([
+            'email'     => $this->email,
+            'token'     => $this->token,
+            'reference' => $referenceCode
+        ], $this->url['notifications'], false);
+    }
+
+    /**
      * Valida os dados.
      *
      * @param array $data
