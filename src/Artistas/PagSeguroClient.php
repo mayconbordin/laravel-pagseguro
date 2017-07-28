@@ -236,7 +236,7 @@ class PagSeguroClient extends PagSeguroConfig
             'email'     => $this->email,
             'token'     => $this->token,
             'reference' => $referenceCode
-        ], $this->url['notifications'], false);
+        ], $this->url['transactions'], false);
     }
 
     /**
